@@ -10,19 +10,29 @@
         android:id="@+id/changeBackgroundBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="92dp"
         android:text="CHANGE BACKGROUND"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/serialNumberBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="SERIAL NUMBER"
+        app:layout_constraintEnd_toEndOf="@+id/apiVersionBtn"
+        app:layout_constraintStart_toStartOf="@+id/apiVersionBtn"
+        app:layout_constraintTop_toBottomOf="@+id/apiVersionBtn" />
 
     <Button
         android:id="@+id/textToSpeechBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="63dp"
+        android:layout_marginTop="60dp"
         android:text="TEXT TO SPEECH"
+        app:layout_constraintEnd_toEndOf="@+id/changeBackgroundBtn"
         app:layout_constraintStart_toStartOf="@+id/changeBackgroundBtn"
         app:layout_constraintTop_toBottomOf="@+id/changeBackgroundBtn" />
 
@@ -30,22 +40,10 @@
         android:id="@+id/apiVersionBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginTop="48dp"
         android:text="API VERSION"
-        app:layout_constraintBottom_toTopOf="@+id/serialNumberBtn"
-        app:layout_constraintStart_toStartOf="@+id/serialNumberBtn" />
-
-    <Button
-        android:id="@+id/serialNumberBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="270dp"
-        android:layout_marginBottom="269dp"
-        android:text="SERIAL NUMBER"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/changeBackgroundBtn" />
+        app:layout_constraintEnd_toEndOf="@+id/textToSpeechBtn"
+        app:layout_constraintStart_toStartOf="@+id/textToSpeechBtn"
+        app:layout_constraintTop_toBottomOf="@+id/textToSpeechBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
