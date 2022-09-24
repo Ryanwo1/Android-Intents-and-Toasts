@@ -16,6 +16,7 @@ public class SpeakActivity extends AppCompatActivity {
         backToMainActivityFromSpeakActivityBtn = findViewById(R.id.backBtn);
         backToMainActivityFromSpeakActivityBtn.setOnClickListener(v -> {
             finish();
+            // test
         });
     }
 }
