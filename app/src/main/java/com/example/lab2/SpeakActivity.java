@@ -4,14 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import java.util.Locale;
 
 public class SpeakActivity extends AppCompatActivity {
-    private TextView userEnteredTextField;
+    private EditText userEnteredTextField;
     private TextToSpeech ttobj;
     private Button backToMainActivityFromSpeakActivityBtn;
+    private Button speakEnteredTextBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +24,13 @@ public class SpeakActivity extends AppCompatActivity {
 
         backToMainActivityFromSpeakActivityBtn.setOnClickListener(v -> finish());
 
-        ttobj = new TextToSpeech(getApplicationContext(), status -> {
+        speakEnteredTextBtn = findViewById(R.id.speakBtn);
+        speakEnteredTextBtn.setOnClickListener(v -> ttobj = new TextToSpeech(getApplicationContext(), status -> {
             if (status != TextToSpeech.ERROR) {
-                String textToSay = userEnteredTextField.getText().toString();
                 ttobj.setLanguage(Locale.CANADA_FRENCH);
+                String textToSay = userEnteredTextField.getText().toString();
                 ttobj.speak(textToSay, TextToSpeech.QUEUE_ADD, null, "Enter text here field");
             }
-        });
-
+        }));
     }
 }
