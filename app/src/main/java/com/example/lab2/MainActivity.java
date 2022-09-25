@@ -5,17 +5,13 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
+import android.provider.Settings;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    private Button changeBackgroundBtn;
-    private Button textToSpeechBtn;
-    private Button apiVersionButton;
-    private Button serialNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
         final ConstraintLayout mainLayout;
         mainLayout = findViewById(R.id.mainLayout);
-        changeBackgroundBtn = findViewById(R.id.changeBackgroundBtn);
-        textToSpeechBtn = findViewById(R.id.textToSpeechBtn);
+        Button changeBackgroundBtn = findViewById(R.id.changeBackgroundBtn);
+        Button textToSpeechBtn = findViewById(R.id.textToSpeechBtn);
 
         Random rnd = new Random();
         changeBackgroundBtn.setOnClickListener(v -> {
@@ -41,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        apiVersionButton = findViewById(R.id.apiVersionBtn);
+        Button apiVersionButton = findViewById(R.id.apiVersionBtn);
         apiVersionButton.setOnClickListener(v -> {
             String manufacturer = android.os.Build.MANUFACTURER;
             String model = android.os.Build.MODEL;
@@ -57,6 +53,21 @@ public class MainActivity extends AppCompatActivity {
            apiView.setTextColor(Color.RED);
            toast.show();
         });
+
+        Button serialNumberButton = findViewById(R.id.serialNumberBtn);
+        serialNumberButton.setOnClickListener(v -> {
+            String deviceId = Settings.System.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_TEXT, deviceId);
+            intent.setType("text/plain");
+
+            Intent shareIntent = Intent.createChooser(intent, null);
+
+            startActivity(shareIntent);
+        });
+
+
     }
 
 }

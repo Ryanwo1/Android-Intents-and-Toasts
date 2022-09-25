@@ -11,20 +11,18 @@ import java.util.Locale;
 public class SpeakActivity extends AppCompatActivity {
     private EditText userEnteredTextField;
     private TextToSpeech ttobj;
-    private Button backToMainActivityFromSpeakActivityBtn;
-    private Button speakEnteredTextBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speak);
 
-        backToMainActivityFromSpeakActivityBtn = findViewById(R.id.backBtn);
+        Button backToMainActivityFromSpeakActivityBtn = findViewById(R.id.backBtn);
         userEnteredTextField = findViewById(R.id.enterTextField);
 
         backToMainActivityFromSpeakActivityBtn.setOnClickListener(v -> finish());
 
-        speakEnteredTextBtn = findViewById(R.id.speakBtn);
+        Button speakEnteredTextBtn = findViewById(R.id.speakBtn);
         speakEnteredTextBtn.setOnClickListener(v -> ttobj = new TextToSpeech(getApplicationContext(), status -> {
             if (status != TextToSpeech.ERROR) {
                 ttobj.setLanguage(Locale.CANADA_FRENCH);

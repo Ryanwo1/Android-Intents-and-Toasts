@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">lab3</string>
+    <string name="change_background">CHANGE BACKGROUND</string>
+    <string name="serial_number">SERIAL NUMBER</string>
+    <string name="text_to_speech">TEXT TO SPEECH</string>
+    <string name="api_version">API VERSION</string>
+    <string name="back">BACK</string>
+    <string name="speak">SPEAK</string>
+    <string name="please_enter_some_text">Please enter some text</string>
 </resources>

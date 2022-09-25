@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
         android:layout_marginEnd="92dp"
-        android:text="CHANGE BACKGROUND"
+        android:text="@string/change_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="SERIAL NUMBER"
+        android:text="@string/serial_number"
         app:layout_constraintEnd_toEndOf="@+id/apiVersionBtn"
         app:layout_constraintStart_toStartOf="@+id/apiVersionBtn"
         app:layout_constraintTop_toBottomOf="@+id/apiVersionBtn" />
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:text="TEXT TO SPEECH"
+        android:text="@string/text_to_speech"
         app:layout_constraintEnd_toEndOf="@+id/changeBackgroundBtn"
         app:layout_constraintStart_toStartOf="@+id/changeBackgroundBtn"
         app:layout_constraintTop_toBottomOf="@+id/changeBackgroundBtn" />
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="API VERSION"
+        android:text="@string/api_version"
         app:layout_constraintEnd_toEndOf="@+id/textToSpeechBtn"
         app:layout_constraintStart_toStartOf="@+id/textToSpeechBtn"
         app:layout_constraintTop_toBottomOf="@+id/textToSpeechBtn" />
