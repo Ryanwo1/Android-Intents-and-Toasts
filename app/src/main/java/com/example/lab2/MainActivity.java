@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
         final ConstraintLayout mainLayout;
         mainLayout = findViewById(R.id.mainLayout);
-
         changeBackgroundBtn = findViewById(R.id.changeBackgroundBtn);
         textToSpeechBtn = findViewById(R.id.textToSpeechBtn);
 
@@ -38,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, SpeakActivity.class);
             startActivity(intent);
             Toast.makeText(MainActivity.this, "TTS Test", Toast.LENGTH_LONG).show();
+
         });
     }
 }
